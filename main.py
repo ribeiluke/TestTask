@@ -6,7 +6,7 @@ import time
 
 def run():
     # Create an ArgumentParser object
-    parser = argparse.ArgumentParser(description="Process some file paths.")
+    parser = argparse.ArgumentParser(description="This program syncronizes files between two different folders.")
 
     # Add an argument with a name
     parser.add_argument('--sourceFolder', type=str, help='Path to the source folder')
