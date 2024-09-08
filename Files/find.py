@@ -37,7 +37,7 @@ def update_file(file_path:str, content:str):
 def remove_file(file_path:str):
     if os.path.exists(file_path):
         os.remove(file_path)
-        print(f"\nFile {file_path} has been deleted.\n")
+        print(f"File {file_path} has been deleted.\n")
 
 def get_default_log_path():
     # Get the current file's absolute path
