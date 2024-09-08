@@ -18,11 +18,11 @@ Step 4:
 
 Step 5 - run commmand
 
-command syntax:
+run command syntax:
     
     python3 main.py --sourceFolder /path/to/sourceFolder/ --replicaFolder /path/to/replicaFolder/ --logPath /path/logFile --interval integer
 
-Example Run command:
+Example run command:
 
     python3 main.py --sourceFolder /home/lukenyr/Documents/Python/VeeamTestTask/ --replicaFolder /home/lukenyr/Documents/Python/VeeamTestTask/replica/ --logPath /home/lukenyr/Documents/Python/VeeamTestTask/log.txt --interval 1
 
