@@ -28,7 +28,8 @@ Example Run command:
 
 Bonus:
 
-Program includes a help command to reduce learning curve to use this script.
+Program includes a help command to reduce learning curve.
 
-    Help command:
+Help command:
+    
     python3 main.py -h
