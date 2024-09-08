@@ -1,5 +1,5 @@
 import argparse
-from Files.find import get_file_names, update_file, get_default_log_path
+from Files.find import get_file_names, check_log_path
 from Files.syncronization import setup_sync, sync
 from datetime import datetime
 import time
@@ -18,33 +18,18 @@ def run():
     args = parser.parse_args()
     if not args.sourceFolder:
         log_data = f"{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - Missing path to source folder. Please submit one using --sourceFolder parameter."
-        if args.logPath:
-            update_file(args.logPath, log_data)
-        else:
-            print(f"{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - Missing path to log file. Will use its default path.\n")
-            args.logPath = get_default_log_path()
-            update_file(args.logPath, log_data)
+        check_log_path(args=args, log_data=log_data)
         return None
     
     if not args.replicaFolder:
         log_data = f"{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - Missing path to replica folder. Please submit one using --replicaFolder parameter."
-        if args.logPath:
-            update_file(args.logPath, log_data)
-        else:
-            print(f"{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - Missing path to log file. Will use its default path.\n")
-            args.logPath = get_default_log_path()
-            update_file(args.logPath, log_data)
+        check_log_path(args=args, log_data=log_data)
         return None
     
     if not args.interval:
         log_data = f"{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - Missing interval parameter. Will use 60 minutes as default."
         args.interval = 60
-        if args.logPath:
-            update_file(args.logPath, log_data)
-        else:
-            print(f"\n{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - Missing path to log file. Will use its default path.\n")
-            args.logPath = get_default_log_path()
-            update_file(args.logPath, log_data)
+        check_log_path(args=args, log_data=log_data)
 
     while True:
         source_file_names = get_file_names(args.sourceFolder)

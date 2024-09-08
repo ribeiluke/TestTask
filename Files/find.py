@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 
 def get_file_names(path:str):
     try:
@@ -48,3 +49,12 @@ def get_default_log_path():
     log_file_path = project_directory_path + "/default_log.txt"
 
     return log_file_path
+
+def check_log_path(args, log_data:str):
+    if args.logPath:
+        update_file(args.logPath, log_data)
+    else:
+        print(f"{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - Missing path to log file. Will use its default path.\n")
+        args.logPath = get_default_log_path()
+        update_file(args.logPath, log_data)
+
