@@ -1,6 +1,4 @@
 # .gitignore
-.env
-.pullbackVenv
 Lukeny_Veeam_Test_Task.egg-info
 **/__pycache__/
 .mypy__cache
