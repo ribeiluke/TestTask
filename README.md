@@ -20,7 +20,7 @@ Step 5 - run commmand
 
 run command syntax:
     
-    python3 main.py --sourceFolder /path/to/sourceFolder/ --replicaFolder /path/to/replicaFolder/ --logPath /path/logFile --interval integer
+    python3 main.py --sourceFolder /path/to/sourceFolder/ --replicaFolder /path/to/replicaFolder/ --logPath /path/to/logFile --interval integer
 
 Example run command:
 
